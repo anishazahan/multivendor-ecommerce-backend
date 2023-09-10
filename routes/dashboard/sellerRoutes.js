@@ -15,6 +15,7 @@ router.get(
   sellerController.get_deactive_sellers
 );
 
+
 router.get(
   "/get-seller/:sellerId",
   authMiddleware,
