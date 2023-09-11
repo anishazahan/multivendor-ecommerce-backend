@@ -6,4 +6,4 @@ router.post(
 );
 router.post("/customer/customer-login", customerAuthController.customer_login);
 
-// module.exports = router;
+module.exports = router;
