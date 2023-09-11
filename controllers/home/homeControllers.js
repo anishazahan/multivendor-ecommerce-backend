@@ -8,6 +8,7 @@ const {
 } = require("mongoose");
 
 const { responseReturn } = require("../../utiles/response");
+
 class homeControllers {
   formateProduct = (products) => {
     const productArray = [];
@@ -26,9 +27,11 @@ class homeControllers {
     }
     return productArray;
   };
+
   get_categorys = async (req, res) => {
     try {
       const categorys = await categoryModel.find({});
+      //   console.log(categorys);
       responseReturn(res, 200, {
         categorys,
       });
