@@ -374,9 +374,9 @@ class orderController {
 
       responseReturn(res, 200, { message: "success" });
     } catch (error) {
-      console.log(error.message);
+      // console.log(error.message);
     }
   };
 }
 
-// module.exports = new orderController();
+module.exports = new orderController();
