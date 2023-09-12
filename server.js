@@ -19,7 +19,7 @@ app.use(
 //------- production routes ----------
 
 app.use("/api/home", require("./routes/home/homeRoutes"));
-app.use("/api", require("./routes/order/orderRoutes"));
+// app.use("/api", require("./routes/order/orderRoutes"));
 app.use("/api", require("./routes/authRoutes"));
 app.use("/api", require("./routes/home/cardRoutes"));
 app.use("/api", require("./routes/home/customerAuthRoutes"));
@@ -31,8 +31,8 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-const port = process.env.PORT;
-dbConnect();
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
+// const port = process.env.PORT;
+// dbConnect();
+// app.listen(port, () => {
+//   console.log(`Example app listening on port ${port}`);
+// });

@@ -221,18 +221,18 @@ class cardController {
     }
   };
 
-  // delete_wishlist = async (req, res) => {
-  //   const { wishlistId } = req.params;
-  //   try {
-  //     const wishlist = await wishlistModel.findByIdAndDelete(wishlistId);
-  //     responseReturn(res, 200, {
-  //       message: "Remove success",
-  //       wishlistId,
-  //     });
-  //   } catch (error) {
-  //     console.log(error.message);
-  //   }
-  // };
+  delete_wishlist = async (req, res) => {
+    const { wishlistId } = req.params;
+    try {
+      const wishlist = await wishlistModel.findByIdAndDelete(wishlistId);
+      responseReturn(res, 200, {
+        message: "Remove success",
+        wishlistId,
+      });
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
 }
 
 module.exports = new cardController();
