@@ -27,12 +27,12 @@ app.use("/api", require("./routes/dashboard/categoryRoutes"));
 app.use("/api", require("./routes/dashboard/productRoutes"));
 app.use("/api", require("./routes/dashboard/sellerRoutes"));
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
-
-// const port = process.env.PORT;
-// dbConnect();
-// app.listen(port, () => {
-//   console.log(`Example app listening on port ${port}`);
+// app.get("/", (req, res) => {
+//   res.send("Hello World!");
 // });
+
+const port = process.env.PORT;
+dbConnect();
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
+});
