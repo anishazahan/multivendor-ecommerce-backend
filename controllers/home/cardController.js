@@ -235,4 +235,4 @@ class cardController {
   };
 }
 
-module.exports = new cardController();
+// module.exports = new cardController();

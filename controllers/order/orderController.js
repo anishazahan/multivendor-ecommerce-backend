@@ -333,50 +333,50 @@ class orderController {
     }
   };
 
-  // order_confirm = async (req, res) => {
-  //   const { orderId } = req.params;
-  //   try {
-  //     await customerOrder.findByIdAndUpdate(orderId, {
-  //       payment_status: "paid",
-  //       delivery_status: "pending",
-  //     });
-  //     await authOrderModel.updateMany(
-  //       { orderId: new ObjectId(orderId) },
-  //       {
-  //         payment_status: "paid",
-  //         delivery_status: "pending",
-  //       }
-  //     );
-  //     const cuOrder = await customerOrder.findById(orderId);
+  order_confirm = async (req, res) => {
+    const { orderId } = req.params;
+    try {
+      await customerOrder.findByIdAndUpdate(orderId, {
+        payment_status: "paid",
+        delivery_status: "pending",
+      });
+      await authOrderModel.updateMany(
+        { orderId: new ObjectId(orderId) },
+        {
+          payment_status: "paid",
+          delivery_status: "pending",
+        }
+      );
+      const cuOrder = await customerOrder.findById(orderId);
 
-  //     const auOrder = await authOrderModel.find({
-  //       orderId: new ObjectId(orderId),
-  //     });
+      const auOrder = await authOrderModel.find({
+        orderId: new ObjectId(orderId),
+      });
 
-  //     const time = moment(Date.now()).format("l");
+      const time = moment(Date.now()).format("l");
 
-  //     const splitTime = time.split("/");
+      const splitTime = time.split("/");
 
-  //     await myShopWallet.create({
-  //       amount: cuOrder.price,
-  //       manth: splitTime[0],
-  //       year: splitTime[2],
-  //     });
+      await myShopWallet.create({
+        amount: cuOrder.price,
+        manth: splitTime[0],
+        year: splitTime[2],
+      });
 
-  //     for (let i = 0; i < auOrder.length; i++) {
-  //       await sellerWallet.create({
-  //         sellerId: auOrder[i].sellerId.toString(),
-  //         amount: auOrder[i].price,
-  //         manth: splitTime[0],
-  //         year: splitTime[2],
-  //       });
-  //     }
+      for (let i = 0; i < auOrder.length; i++) {
+        await sellerWallet.create({
+          sellerId: auOrder[i].sellerId.toString(),
+          amount: auOrder[i].price,
+          manth: splitTime[0],
+          year: splitTime[2],
+        });
+      }
 
-  //     responseReturn(res, 200, { message: "success" });
-  //   } catch (error) {
-  //     console.log(error.message);
-  //   }
-  // };
+      responseReturn(res, 200, { message: "success" });
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
 }
 
 module.exports = new orderController();
