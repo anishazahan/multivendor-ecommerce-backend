@@ -135,7 +135,7 @@ io.on("connection", (soc) => {
 
 //------- production routes ----------
 
-app.use("/api", require("./routes/chatRoutes"));
+// app.use("/api", require("./routes/chatRoutes"));
 
 app.use("/api/home", require("./routes/home/homeRoutes"));
 // app.use("/api", require("./routes/order/orderRoutes"));
