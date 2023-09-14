@@ -9,6 +9,7 @@ const formidable = require("formidable");
 const cloudinary = require("cloudinary").v2;
 
 class authControllers {
+  http: //localhost:3001/admin/login
   admin_login = async (req, res) => {
     // console.log(req.body);
     const { email, password } = req.body;
