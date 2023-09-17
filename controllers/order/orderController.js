@@ -271,7 +271,7 @@ class orderController {
       } else {
         const orders = await authOrderModel
           .find({
-            sellerId,
+            // sellerId,
           })
           .skip(skipPage)
           .limit(parPage)
