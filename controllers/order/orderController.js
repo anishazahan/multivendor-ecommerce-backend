@@ -262,7 +262,7 @@ class orderController {
     const { sellerId } = req.params;
     let { page, parPage, searchValue } = req.query;
     page = parseInt(page);
-    // parPage = parseInt(parPage);
+    parPage = parseInt(parPage);
 
     const skipPage = parPage * (page - 1);
 
@@ -271,7 +271,7 @@ class orderController {
       } else {
         const orders = await authOrderModel
           .find({
-            // sellerId,
+            sellerId,
           })
           .skip(skipPage)
           .limit(parPage)
@@ -368,7 +368,7 @@ class orderController {
           sellerId: auOrder[i].sellerId.toString(),
           amount: auOrder[i].price,
           manth: splitTime[0],
-          year: splitTime[2],
+          // year: splitTime[2],
         });
       }
 
