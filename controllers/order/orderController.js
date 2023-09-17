@@ -262,7 +262,7 @@ class orderController {
     const { sellerId } = req.params;
     let { page, parPage, searchValue } = req.query;
     page = parseInt(page);
-    parPage = parseInt(parPage);
+    // parPage = parseInt(parPage);
 
     const skipPage = parPage * (page - 1);
 
@@ -372,7 +372,7 @@ class orderController {
         });
       }
 
-      // responseReturn(res, 200, { message: "success" });
+      responseReturn(res, 200, { message: "success" });
     } catch (error) {
       console.log(error.message);
     }
