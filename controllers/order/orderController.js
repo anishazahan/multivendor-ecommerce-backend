@@ -11,7 +11,7 @@ const { responseReturn } = require("../../utiles/response");
 
 const moment = require("moment");
 const stripe = require("stripe")(
-  "sk_test_51Nk8Y4F0B89ncn3xMHxYCwnaouDR6zuX83ckbJivv2jOUJ9CTka6anJcKMLnatgeBUeQq1RcRYynSPgp6f5zS4qF00YZFMYHuD"
+  "sk_test_51NrKm0IxJBD9Bv9pAMmgVnsZRQWFjwCOeaP7F03Lx5D7mdgAiuHEZGy0jVAgYr52tkV7Fsu9AfbV8jhMNqRNq7BR00wvkq8wq4"
 );
 
 class orderController {
