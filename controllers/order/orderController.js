@@ -368,7 +368,7 @@ class orderController {
           sellerId: auOrder[i].sellerId.toString(),
           amount: auOrder[i].price,
           manth: splitTime[0],
-          // year: splitTime[2],
+          year: splitTime[2],
         });
       }
 
