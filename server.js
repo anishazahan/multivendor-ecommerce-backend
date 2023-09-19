@@ -17,7 +17,12 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: ["http://localhost:3000", "http://localhost:3001"],
+    origin: [
+      "http://localhost:3000",
+      "http://localhost:3001",
+      "https://multivendor-ecommerce-dashbroad.vercel.app",
+      "https://multivendor-ecommerce-frontend.vercel.app",
+    ],
     credentials: true,
   })
 );

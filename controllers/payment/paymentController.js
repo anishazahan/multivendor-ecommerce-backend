@@ -25,8 +25,9 @@ class paymentController {
 
         const accountLink = await stripe.accountLinks.create({
           account: account.id,
-          refresh_url: "http://localhost:3000/refresh",
-          return_url: `http://localhost:3000/success?activeCode=${uid}`,
+          refresh_url:
+            "https://multivendor-ecommerce-dashbroad.vercel.app/refresh",
+          return_url: `https://multivendor-ecommerce-dashbroad.vercel.app/success?activeCode=${uid}`,
           type: "account_onboarding",
         });
         await striptModel.create({
@@ -40,8 +41,9 @@ class paymentController {
 
         const accountLink = await stripe.accountLinks.create({
           account: account.id,
-          refresh_url: "http://localhost:3000/refresh",
-          return_url: `http://localhost:3000/success?activeCode=${uid}`,
+          refresh_url:
+            "https://multivendor-ecommerce-dashbroad.vercel.app/refresh",
+          return_url: `https://multivendor-ecommerce-dashbroad.vercel.app/success?activeCode=${uid}`,
           type: "account_onboarding",
         });
         await striptModel.create({

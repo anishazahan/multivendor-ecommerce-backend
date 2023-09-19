@@ -7,6 +7,7 @@ const {
 class cardController {
   add_to_card = async (req, res) => {
     const { userId, productId, quantity } = req.body;
+    console.log(userId);
     try {
       const product = await cardModel.findOne({
         $and: [
