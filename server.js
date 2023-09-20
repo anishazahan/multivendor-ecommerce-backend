@@ -1,7 +1,7 @@
 const express = require("express");
 const { dbConnect } = require("./utiles/db");
-const app = express();
 const cors = require("cors");
+const app = express();
 const http = require("http");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
