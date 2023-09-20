@@ -15,23 +15,45 @@ const server = http.createServer(app);
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-app.use(
-  cors({
+// app.use(
+//   cors({
+//     origin: [
+//       "http://localhost:3000",
+//       "http://localhost:3001",
+//       "https://multivendor-ecommerce-dashbroad.vercel.app",
+//       "https://multivendor-ecommerce-frontend.vercel.app",
+//     ],
+//     credentials: true,
+//   })
+// );
+
+const allowedOrigins = [
+  "http://localhost:3000",
+  "http://localhost:3001",
+  "https://multivendor-ecommerce-dashbroad.vercel.app",
+  "https://multivendor-ecommerce-frontend.vercel.app",
+];
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (allowedOrigins.indexOf !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+};
+
+// Use CORS middleware with the specified options
+app.use(cors(corsOptions));
+
+const io = socket(server, {
+  cors: {
     origin: [
       "http://localhost:3000",
       "http://localhost:3001",
       "https://multivendor-ecommerce-dashbroad.vercel.app",
       "https://multivendor-ecommerce-frontend.vercel.app",
     ],
-    credentials: true,
-  })
-);
-
-// app.use(cors());
-
-const io = socket(server, {
-  cors: {
-    origin: "*",
     credentials: true,
   },
 });
