@@ -2,6 +2,7 @@ const router = require("express").Router();
 const authControllers = require("../controllers/authControllers");
 const { authMiddleware } = require("../middlewares/authMiddleware");
 
+// http://localhost:3000/admin/login
 router.post("/admin-login", authControllers.admin_login);
 router.post("/seller-login", authControllers.seller_login);
 router.post("/seller-register", authControllers.seller_register);
