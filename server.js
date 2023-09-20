@@ -41,6 +41,7 @@ const corsOptions = {
       callback(new Error("Not allowed by CORS"));
     }
   },
+  credentials: true,
 };
 
 // Use CORS middleware with the specified options
