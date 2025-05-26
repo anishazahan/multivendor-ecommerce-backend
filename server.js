@@ -32,6 +32,8 @@ const allowedOrigins = [
   "http://localhost:3001",
   "https://multivendor-ecommerce-dashbroad.vercel.app",
   "https://multivendor-ecommerce-frontend.vercel.app",
+  "https://multivendor-ecommerse-dashbroad.onrender.com",
+  "https://multivendor-ecommerce-frontend.onrender.com",
 ];
 const corsOptions = {
   origin: (origin, callback) => {
@@ -54,6 +56,8 @@ const io = socket(server, {
       "http://localhost:3001",
       "https://multivendor-ecommerce-dashbroad.vercel.app",
       "https://multivendor-ecommerce-frontend.vercel.app",
+      "https://multivendor-ecommerse-dashbroad.onrender.com",
+      "https://multivendor-ecommerce-frontend.onrender.com",
     ],
     credentials: true,
   },
